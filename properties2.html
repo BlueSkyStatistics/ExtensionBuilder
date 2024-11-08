@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Properties Box</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .properties-box {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .properties-box h5 {
+            margin-bottom: 15px;
+        }
+        .properties-box .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-3">
+        <!-- Elements to click on -->
+        <div class="row">
+            <div class="col-4">
+                <div class="clickable-item" data-type="text" data-value="Example text">
+                    <button class="btn btn-primary">Text Element</button>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="clickable-item" data-type="number" data-value="42">
+                    <button class="btn btn-secondary">Number Element</button>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="clickable-item" data-type="color" data-value="#ff0000">
+                    <button class="btn btn-success">Color Element</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Properties Box -->
+        <div class="properties-box">
+            <h5>Properties</h5>
+            <div class="form-group">
+                <label for="propertyName">Name</label>
+                <input type="text" class="form-control" id="propertyName" disabled>
+            </div>
+            <div class="form-group">
+                <label for="propertyValue">Value</label>
+                <input type="text" class="form-control" id="propertyValue">
+            </div>
+            <div class="form-group" id="colorGroup" style="display: none;">
+                <label for="propertyColor">Color</label>
+                <input type="color" class="form-control" id="propertyColor">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.clickable-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const type = this.getAttribute('data-type');
+                const value = this.getAttribute('data-value');
+                
+                //document.getElementById('propertyName').value = type.charAt(0).toUpperCase() + type.slice(1);
+                document.getElementById('propertyValue').value = value;
+
+                // Show/hide elements based on type
+                if (type === 'color') {
+                    document.getElementById('colorGroup').style.display = 'block';
+                    document.getElementById('propertyColor').value = value;
+                } else {
+                    document.getElementById('colorGroup').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+:root {
+    --dark: rgb(44,61,81);
+    --dark-gray: rgb(44,61,81);
+    --gray: rgb(74,98,124);
+    --gray-shadow: rgb(44,61,81);
+    --light-gray: rgb(74,98,124);
+    --light: #f4f5f7;
+    --darker: #e2e2e3;
+    --white: #fff;
+    --orange-highlight: rgb(251,176,57);
+    --listitem-hover: #2196f3;
+    --card-bg: rgba(153, 153, 153, 0.1) !important;
+
+    --light-gray2: rgb(56,60,68);
+}
+
+.form-check-input:disabled ~ .form-check-label {
+    color: var(--listitem-hover); }
+
+.full-width {
+    width: 100%;
+}
+.row-2-percent {
+    height: 2vh; /* 2% of the viewport height */
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.row-96-percent {
+    height: 96vh; /* 96% of the viewport height */
+    overflow-x: hidden;
+}
+.row-70 {
+    height: 70vh; /* 70% of the viewport height */
+    overflow-x: hidden;
+}
+.row-27 {
+    height: 27vh; /* 30% of the viewport height */
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; /* 80% of its parent container */
+    overflow-x: hidden;
+}
+.row-3 {
+    height: 3vh; /* 30% of the viewport height */
+    border-bottom: 1px solid var(--dark-gray);
+    background-color: var(--gray);
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; /* 80% of its parent container */
+}
+.column1 {
+    border: 1px solid #000000;
+    overflow-y: hidden;
+    overflow-x: hidden; /* I changed this & ^ & below*/
+    padding: 20px;
+    height: 100%;
+}
+.column2 {
+    border: 1px solid #000000;
+    overflow-y: hidden;
+    overflow-x: hidden; /* I changed this & ^ & below*/
+    padding: 0px;
+    height: 100%;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.small-button {
+    font-size: 70%;
+    padding: 0px;
+    width: 200%;
+    height: 100%;
+}
+.small-button2 {
+    font-size: 70%;
+    padding: 0px;
+    width: 50px;
+    height: 100%;
+    background-color: var(--gray);
+    border: var(--gray);
+}
+
+.col-border {
+    border-left: 1px solid var(--dark-gray); /* Defines the border */
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+.popup-content {
+    background-color: #fefefe;
+    margin: 0% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #00ff80;
+    transform: translate(-200%, 10%);
+    width: 20%; /* Could be more or less, depending on screen size */
+    height: 40%;
+}
+
+.square { /* delete this and square 2 later */
+    width: 50%;
+    height: 50%;
+    background-color: rgb(255, 0, 0);
+    margin: 10px;
+}
+.square2 {
+    width: 100px;
+    height: 100px;
+    background-color: darkmagenta;
+    margin: 10px;
+}
+.draggable-square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    cursor: pointer;
+}
+
+.full-height {
+    height: 100%;
+}
+
+body {
+    color: var(--white);
+}
+
+.layoutContainerCSS {
+    z-index: 1;
+    background-color: var(--gray);
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; /* 80% of its parent container */
+    height: 70%; /* Fixed height */
+    text-align: left;
+    padding: 10px;
+}
+
+/* .layout2Outline {
+    z-index: 50;
+    width: 3px;
+    height: 100%;
+    background-color: rgb(0, 0, 0); 
+} */
+
+/* .layout {
+     identifies that this is a layout to place objects in --> used in js
+} */

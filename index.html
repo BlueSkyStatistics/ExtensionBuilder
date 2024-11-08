@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Creator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
+ 
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome.min.css">
+
+
+    <!-- <link rel="stylesheet" href="BskyMaterials.css"> -->
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+
+    <!-- CodeMirror (files from )-->
+  <!-- <link rel="stylesheet" href="./assets/vendor/codemirror/codemirror.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/addon/fold/foldgutter.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/addon/dialog/dialog.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/theme/monokai.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/theme/xq-light.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/theme/mdn-like.css">
+  <link rel="stylesheet" href="./assets/vendor/codemirror/addon/hint/show-hint.css"> -->
+
+    <!-- files from charts folder (in this project) -->
+    <link rel="stylesheet" href="charts/css/charts.css">
+    <link rel="stylesheet" href="charts/css/charts-ie7.css">
+    <link rel="stylesheet" href="charts/css/charts-ie7-codes.css">
+    <link rel="stylesheet" href="charts/css/charts-embedded.css">
+    <link rel="stylesheet" href="charts/css/charts-codes.css">
+    <link rel="stylesheet" href="charts/css/animation.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row row-2-percent bg-primary"> 
+            <!-- Content for first row -->
+        </div>
+        <div class="row row-2-percent bg-secondary">
+            <!-- Content for second row -->
+            <div class="btn-container">
+                <button id="openPopupBtn" type="button" class="btn btn-light small-button">File</button>
+
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <p>This is a simple popup!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-96-percent">
+            <div class="col-md-2 column1 bg-light">
+                <div class="btn-container">
+                    <button id = 'btn3' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">---</button> <!--draggable="true" ondragstart="drag(event)"-->
+                    <button id = 'btn4' type="button" class="btn btn-dark btn-sm">---</button>
+                    <button id = 'btn5' type="button" class="btn btn-dark btn-sm">---</button>
+                    <button id = 'btn6' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">CheckBox</button>
+                    <button id = 'btn7' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Advanced Slider</button>
+                    <button id = 'btn8' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Textbox</button>
+                    <button id = 'btn9' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Advanced Textbox</button>
+                    <button id = 'btn10' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Radio Button</button>
+                    <button id = 'btn11' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Source Variable List</button>
+                    <button id = 'btn12' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Dest Variable List</button>
+                    <button id = 'btn13' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Combo Box *</button>
+                    <button id = 'btn14' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Dest Variable</button>
+                    <button id = 'btn15' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Source Dataset List</button>
+                    <button id = 'btn16' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Input Spinner</button>
+                    <button id = 'btn17' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Label</button>
+                    <button id = 'btn18' type="button" class="btn btn-dark btn-sm" draggable="true" ondragstart="drag(event)">Select</button>
+                </div>
+            </div>
+            <!-- second column -->
+            <div class="col-md-8 column2">
+                <div class="row row-3">
+                    <button id = 'btn1' type="button" class="btn btn-dark small-button2">Layout 1</button>
+                    <button id = 'btn2' type="button" class="btn btn-dark small-button2">Layout 2</button>
+                </div>
+                <div id="layoutContainer" class="layoutContainerCSS row-70"> <!-- ondragover="allowDrop(event)" ondrop="drop(event)" -- added to 1st layout (ln 11)-->     
+                </div>
+                <div class="row row-27 bg-light">
+                    
+                </div>
+            </div>
+            <!-- third column -->
+            <div class="col-md-2 p-0 column1 bg-light">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        Property Panel
+                    </div>
+                    <div class="card-body">
+                        <!-- Property: Control Settings -->
+                        <div class="mb-3" id="PropertyPanel">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!-- squirrely -->
+    <script src="https://unpkg.com/squirrelly"></script>
+
+    <script src="script.js"></script>
+
+    <!-- <script src="./assets/vendor/codemirror/codemirror.js"></script> -->
+
+    <!-- CodeMirror JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+
+
+
+</body>
+</html>
